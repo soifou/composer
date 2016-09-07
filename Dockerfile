@@ -1,5 +1,13 @@
 FROM alpine:edge
 
+ARG BUILD_DATE
+ARG VCS_REF
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.version="php-7.0" \
+      org.label-schema.docker.dockerfile="/Dockerfile" \
+      org.label-schema.vcs-url="https://github.com/soifou/composer"
+
 RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/testing" \
     wget \
     ca-certificates \
