@@ -34,10 +34,8 @@ COPY composer-wrapper /usr/local/bin/composer-wrapper
 RUN chmod +x /usr/local/bin/composer-wrapper
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV COMPOSER_HOME /root/.composer
+ENV COMPOSER_HOME /home/composer/.composer
 
 WORKDIR /usr/src/app
-
-VOLUME ["/root/.composer"]
-
+VOLUME ["/home/composer/.composer"]
 ENTRYPOINT ["/usr/local/bin/composer-wrapper"]
