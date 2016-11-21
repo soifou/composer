@@ -16,6 +16,28 @@ function composer() {
 }
 ```
 
+## Check Composer health
+You may want to check first the health of composer with:
+```
+$ composer diagnose
+```
+
+If you are on macOS, using VirtualBox and the diagnose check reports some networking problem like so:
+```
+[Composer\Downloader\TransportException] The "http://packagist.org/packages.json" file could not be downloaded: php_network_getaddresses: getaddrinfo failed: Try again
+failed to open stream: php_network_getaddresses: getaddrinfo failed: Try again
+Checking https connectivity to packagist: FAIL
+```
+
+You could fix it with this:
+```
+$ docker-machine stop [machine-name]
+$ VBoxManage modifyvm [machine-name] --natdnsproxy1 off --natdnshostresolver1 off
+$ docker-machine start [machine-name]
+```
+
+see: https://github.com/boot2docker/boot2docker/issues/451#issuecomment-65432123
+
 ## Custom PHP settings
 Note this image is builded with no PHP memory limit (and other few settings), have a look to their respective `php.ini` file.
 
