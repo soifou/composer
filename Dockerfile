@@ -26,6 +26,7 @@ RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/t
     php7-phar \
     php7-posix \
     php7-session \
+    php7-zip \
     php7-zlib
 
 RUN ln -s /usr/bin/php7 /usr/bin/php
