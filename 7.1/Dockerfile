@@ -11,7 +11,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 ENV PATH "/composer/vendor/bin:$PATH"
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 1.4.1
+ENV COMPOSER_VERSION 1.4.2
 
 RUN apk upgrade -U && \
     apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
