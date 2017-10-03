@@ -25,12 +25,13 @@ RUN echo "http://php.codecasts.rocks/v3.6/php-$PHP_VERSION" >> /etc/apk/reposito
     less \
     tini \
     git \
-    openssh openssl \
-    freetype-dev libjpeg-turbo-dev libpng-dev \
+    openssh \
+    openssl \
     mariadb-client \
     php7 \
     php7-ctype \
     php7-curl \
+    php7-dom \
     php7-gd \
     php7-iconv \
     php7-json \
@@ -43,6 +44,9 @@ RUN echo "http://php.codecasts.rocks/v3.6/php-$PHP_VERSION" >> /etc/apk/reposito
     php7-pdo_mysql \
     php7-phar \
     php7-posix \
+    php7-session \
+    php7-simplexml \
+    php7-tokenizer \
     php7-xml \
     php7-zip \
     php7-zlib
