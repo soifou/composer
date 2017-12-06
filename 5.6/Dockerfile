@@ -4,7 +4,7 @@ ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 5.6
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 1.5.2
+ENV COMPOSER_VERSION 1.5.5
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -33,10 +33,10 @@ RUN apk upgrade -U && \
         pdo_mysql \
         posix \
         xml \
-        zip && \
-    rm -fr /var/cache/apk/*
+        zip
 
 ADD ./composer.sh /composer.sh
+
 RUN chmod u+x /composer.sh && \
     sh /composer.sh $COMPOSER_VERSION
 

@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.5
 
 MAINTAINER François Fleur <fleur.fr@gmail.com>
 
@@ -6,7 +6,7 @@ ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 7.0
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 1.5.2
+ENV COMPOSER_VERSION 1.5.5
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -16,10 +16,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.docker.dockerfile="/Dockerfile" \
       org.label-schema.vcs-url="https://github.com/soifou/composer"
 
-ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-
-RUN echo "http://php.codecasts.rocks/v3.6/php-$PHP_VERSION" >> /etc/apk/repositories && \
-    apk add --update --no-cache \
+RUN apk add --update --no-cache \
     bash \
     curl \
     less \
@@ -37,7 +34,6 @@ RUN echo "http://php.codecasts.rocks/v3.6/php-$PHP_VERSION" >> /etc/apk/reposito
     php7-json \
     php7-mbstring \
     php7-mcrypt \
-    php7-mongodb \
     php7-mysqli \
     php7-openssl \
     php7-pdo \
@@ -45,11 +41,11 @@ RUN echo "http://php.codecasts.rocks/v3.6/php-$PHP_VERSION" >> /etc/apk/reposito
     php7-phar \
     php7-posix \
     php7-session \
-    php7-simplexml \
-    php7-tokenizer \
     php7-xml \
     php7-zip \
     php7-zlib
+
+RUN ln -sf /usr/bin/php7 /usr/bin/php
 
 ADD ./composer.sh /composer.sh
 RUN chmod u+x /composer.sh && \

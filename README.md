@@ -1,10 +1,14 @@
 # Composer Alpine
+
 Latest PHP Composer build on top of Alpine Linux.
+
+See Composer changelog [here](https://github.com/composer/composer/blob/master/CHANGELOG.md) for latest changes.
 
 Heavily inspired by the official [Composer Github repository](https://github.com/composer/docker) but since Composer should run with the same PHP version that match your current project, add a capability to choose it.
 
 ## Tags
-- `php-7.1`, `latest` [(*Dockerfile*)](https://github.com/soifou/composer/tree/master/7.1/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.1.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
+- `php-7.2`, `latest` [(*Dockerfile*)](https://github.com/soifou/composer/tree/master/7.2/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.2.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
+- `php-7.1` [(*Dockerfile*)](https://github.com/soifou/composer/tree/master/7.1/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.1.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
 - `php-7.0` [(*Dockerfile*)](https://github.com/soifou/composer/tree/master/7.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.0.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
 - `php-5.6` [(*Dockerfile*)](https://github.com/soifou/composer/tree/master/5.6/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-5.6.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
 

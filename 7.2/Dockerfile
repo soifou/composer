@@ -3,7 +3,7 @@ FROM alpine:3.7
 MAINTAINER François Fleur <fleur.fr@gmail.com>
 
 ENV PATH "/composer/vendor/bin:$PATH"
-ENV PHP_VERSION 7.1
+ENV PHP_VERSION 7.2
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 ENV COMPOSER_VERSION 1.5.5
@@ -37,7 +37,6 @@ RUN echo "@php https://php.codecasts.rocks/v3.7/php-$PHP_VERSION" >> /etc/apk/re
     php7-iconv@php \
     php7-json@php \
     php7-mbstring@php \
-    php7-mcrypt@php \
     php7-mongodb@php \
     php7-mysqli@php \
     php7-openssl@php \
