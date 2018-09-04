@@ -4,7 +4,7 @@ ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 7.2
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 1.6.2
+ENV COMPOSER_VERSION 1.7.2
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -57,7 +57,8 @@ RUN rm -rf /tmp/src && \
     rm -f /composer.sh \
     rm -rf /var/cache/*
 
-COPY php.ini /usr/local/etc/php/conf.d/50-setting.ini
+COPY php.ini /etc/php7/conf.d/50_custom.ini
+
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 

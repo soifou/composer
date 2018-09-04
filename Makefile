@@ -1,4 +1,4 @@
-.PHONY: build test
+.PHONY: build test setver
 
 REPO=soifou/composer
 
@@ -13,3 +13,6 @@ test:
 	docker run --rm -it $(REPO):php-7.0 composer diagnose
 	docker run --rm -it $(REPO):php-7.1 composer diagnose
 	docker run --rm -it $(REPO) composer diagnose
+
+setver:
+	@find . -name "Dockerfile" | xargs sed -i 's/ENV COMPOSER_VERSION.*/ENV COMPOSER_VERSION $(VERSION)/g'
