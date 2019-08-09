@@ -75,3 +75,21 @@ composer() {
         [...]
 }
 ```
+
+## XDG compliance
+
+If you want to conform to XDG Base Directory Specification as discussed [here](https://github.com/composer/composer/pull/1407), export theses 2 additionnals environment variables :
+
+```sh
+export COMPOSER_HOME="$XDG_CONFIG_HOME/composer"
+export COMPOSER_CACHE_DIR="$XDG_CACHE_HOME/composer"
+```
+
+Then change the volume `-v ~/.composer:/composer` in your alias by this instead:
+
+```sh
+    [...]
+    -v $COMPOSER_HOME:/composer \
+    -v $COMPOSER_CACHE_DIR:/composer/cache \
+    [...]
+```
