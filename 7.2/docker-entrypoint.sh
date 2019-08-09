@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 isCommand() {
   for cmd in \
     "about" \
     "archive" \
     "browse" \
+    "check-platform-reqs" \
     "clear-cache" \
     "clearcache" \
     "config" \
@@ -14,9 +15,11 @@ isCommand() {
     "dump-autoload" \
     "dumpautoload" \
     "exec" \
+    "fix-recipes" \
     "global" \
     "help" \
     "home" \
+    "i" \
     "info" \
     "init" \
     "install" \
@@ -33,7 +36,11 @@ isCommand() {
     "show" \
     "status" \
     "suggests" \
+    "sync-recipes" \
+    "u" \
+    "unpack" \
     "update" \
+    "upgrade" \
     "validate" \
     "why" \
     "why-not"
