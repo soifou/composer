@@ -27,7 +27,9 @@ isCommand() {
     "list" \
     "outdated" \
     "prohibits" \
+    "recipes" \
     "remove" \
+    "req" \
     "require" \
     "run-script" \
     "search" \

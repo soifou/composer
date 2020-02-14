@@ -3,7 +3,7 @@ FROM alpine:3.8
 ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 7.2
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 1.9.1
+ENV COMPOSER_VERSION 1.9.3
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -34,6 +34,7 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.8/php-$PHP_VERSION" >> /etc/apk/r
     php7-iconv \
     php7-json \
     php7-mbstring \
+    php7-mongodb \
     php7-mysqli \
     php7-openssl \
     php7-pdo \

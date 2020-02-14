@@ -1,7 +1,7 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 ENV PATH "/composer/vendor/bin:$PATH"
-ENV PHP_VERSION 7.3
+ENV PHP_VERSION 7.4
 ENV COMPOSER_HOME /composer
 ENV COMPOSER_VERSION 1.9.3
 
@@ -15,7 +15,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
-RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-$PHP_VERSION" >> /etc/apk/repositories && \
+RUN echo "https://dl.bintray.com/php-alpine/v3.10/php-$PHP_VERSION" >> /etc/apk/repositories && \
     apk add --update --no-cache \
     ca-certificates \
     bash \
