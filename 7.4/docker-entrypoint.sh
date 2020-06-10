@@ -28,6 +28,7 @@ isCommand() {
     "outdated" \
     "prohibits" \
     "recipes" \
+    "recipes:install" \
     "remove" \
     "req" \
     "require" \
