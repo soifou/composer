@@ -1,7 +1,7 @@
-FROM alpine:3.9
+FROM alpine:3.12
 
 ENV PATH "/composer/vendor/bin:$PATH"
-ENV PHP_VERSION 7.3
+ENV PHP_VERSION 8.0
 ENV COMPOSER_HOME /composer
 ENV COMPOSER_VERSION 2.0.9
 
@@ -15,7 +15,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
-RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-$PHP_VERSION" >> /etc/apk/repositories && \
+RUN echo "https://dl.bintray.com/php-alpine/v3.12/php-$PHP_VERSION" >> /etc/apk/repositories && \
     apk add --update --no-cache \
     ca-certificates \
     bash \
@@ -26,27 +26,26 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-$PHP_VERSION" >> /etc/apk/r
     openssh \
     openssl \
     mariadb-client \
-    php7 \
-    php7-ctype \
-    php7-curl \
-    php7-dom \
-    php7-gd \
-    php7-iconv \
-    php7-json \
-    php7-mbstring \
-    php7-mongodb \
-    php7-mysqli \
-    php7-openssl \
-    php7-pdo \
-    php7-pdo_mysql \
-    php7-phar \
-    php7-posix \
-    php7-session \
-    php7-xml \
-    php7-zip \
-    php7-zlib
+    php8 \
+    php8-ctype \
+    php8-curl \
+    php8-dom \
+    php8-gd \
+    php8-iconv \
+    php8-mbstring \
+    php8-mongodb \
+    php8-mysqli \
+    php8-openssl \
+    php8-pdo \
+    php8-pdo_mysql \
+    php8-phar \
+    php8-posix \
+    php8-session \
+    php8-xml \
+    php8-zip \
+    php8-zlib
 
-RUN ln -sf /usr/bin/php7 /usr/bin/php
+RUN ln -sf /usr/bin/php8 /usr/bin/php
 
 ADD ./composer.sh /composer.sh
 RUN chmod u+x /composer.sh && \
@@ -56,7 +55,7 @@ RUN rm -rf /tmp/src && \
     rm -f /composer.sh \
     rm -rf /var/cache/*
 
-COPY php.ini /etc/php7/conf.d/50_custom.ini
+COPY php.ini /etc/php8/conf.d/50_custom.ini
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh

@@ -8,7 +8,8 @@ Heavily inspired by the official [Composer Github repository](https://github.com
 
 ## Tags
 
--   `php-7.4`, `latest` [(_Dockerfile_)](https://github.com/soifou/composer/tree/master/7.4/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.4.svg)](http://microbadger.com/images/soifou/
+-   `php-8.0`, `latest` [(_Dockerfile_)](https://github.com/soifou/composer/tree/master/8.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-8.0.svg)](http://microbadger.com/images/soifou/ composer "Get your own image badge on microbadger.com")
+-   `php-7.4` [(_Dockerfile_)](https://github.com/soifou/composer/tree/master/7.4/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.4.svg)](http://microbadger.com/images/soifou/ composer "Get your own image badge on microbadger.com")
 -   `php-7.3` [(_Dockerfile_)](https://github.com/soifou/composer/tree/master/7.3/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.3.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
 -   `php-7.2` [(_Dockerfile_)](https://github.com/soifou/composer/tree/master/7.2/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.2.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")
 -   `php-7.1` [(_Dockerfile_)](https://github.com/soifou/composer/tree/master/7.1/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/composer:php-7.1.svg)](http://microbadger.com/images/soifou/composer "Get your own image badge on microbadger.com")

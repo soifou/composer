@@ -1,22 +1,17 @@
 .PHONY: build test setver
 
 REPO=soifou/composer
+VERSIONS?="5.6 7.0 7.1 7.2 7.3 7.4 8.0"
 
 build:
-	docker build -t $(REPO):php-5.6 5.6/
-	docker build -t $(REPO):php-7.0 7.0/
-	docker build -t $(REPO):php-7.1 7.1/
-	docker build -t $(REPO):php-7.2 7.2/
-	docker build -t $(REPO):php-7.3 7.3/
-	docker build -t $(REPO) 7.4/
+	for i in $(VERSIONS) ; do \
+		docker build -t $(REPO):php-$$i $$i/ ; \
+	done
 
 test:
-	docker run --rm -it $(REPO):php-5.6 composer diagnose
-	docker run --rm -it $(REPO):php-7.0 composer diagnose
-	docker run --rm -it $(REPO):php-7.1 composer diagnose
-	docker run --rm -it $(REPO):php-7.2 composer diagnose
-	docker run --rm -it $(REPO):php-7.3 composer diagnose
-	docker run --rm -it $(REPO) composer diagnose
+	for i in $(VERSIONS) ; do \
+		docker run --rm -it $(REPO):php-$$i composer diagnose ; \
+	done
 
 setver:
 	@find . -name "Dockerfile" | xargs sed -i 's/ENV COMPOSER_VERSION.*/ENV COMPOSER_VERSION $(VERSION)/g'
