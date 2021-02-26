@@ -3,7 +3,7 @@ FROM alpine:3.10
 ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 7.4
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 2.0.9
+ENV COMPOSER_VERSION 2.0.11
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -41,6 +41,7 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.10/php-$PHP_VERSION" >> /etc/apk/
     php7-pdo_mysql \
     php7-phar \
     php7-posix \
+    php7-sodium \
     php7-session \
     php7-xml \
     php7-zip \

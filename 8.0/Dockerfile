@@ -3,7 +3,7 @@ FROM alpine:3.12
 ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 8.0
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 2.0.9
+ENV COMPOSER_VERSION 2.0.11
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -41,6 +41,7 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.12/php-$PHP_VERSION" >> /etc/apk/
     php8-phar \
     php8-posix \
     php8-session \
+    php8-sodium \
     php8-xml \
     php8-zip \
     php8-zlib
