@@ -3,7 +3,7 @@ FROM alpine:3.9
 ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 7.3
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 2.0.11
+ENV COMPOSER_VERSION 2.3.2
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -13,9 +13,9 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.docker.dockerfile="/Dockerfile" \
       org.label-schema.vcs-url="https://github.com/soifou/composer"
 
-ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-
-RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-$PHP_VERSION" >> /etc/apk/repositories && \
+RUN ALPINE_VERSION=`cat /etc/alpine-release | cut -d'.' -f-2` && \
+    wget -O /etc/apk/keys/php-alpine.rsa.pub https://php.hernandev.com/key/php-alpine.rsa.pub && \
+    echo "https://php.hernandev.com/v$ALPINE_VERSION/php-$PHP_VERSION" >> /etc/apk/repositories && \
     apk add --update --no-cache \
     ca-certificates \
     bash \
