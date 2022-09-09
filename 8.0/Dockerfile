@@ -1,9 +1,9 @@
-FROM alpine:3.12
+FROM alpine:3.14
 
 ENV PATH "/composer/vendor/bin:$PATH"
 ENV PHP_VERSION 8.0
 ENV COMPOSER_HOME /composer
-ENV COMPOSER_VERSION 2.3.2
+ENV COMPOSER_VERSION 2.4.1
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -26,25 +26,25 @@ RUN ALPINE_VERSION=`cat /etc/alpine-release | cut -d'.' -f-2` && \
     openssh \
     openssl \
     mariadb-client \
-    php8 \
-    php8-ctype \
-    php8-curl \
-    php8-dom \
-    php8-gd \
-    php8-iconv \
-    php8-mbstring \
-    php8-mongodb \
-    php8-mysqli \
-    php8-openssl \
-    php8-pdo \
-    php8-pdo_mysql \
-    php8-phar \
-    php8-posix \
-    php8-session \
-    php8-sodium \
-    php8-xml \
-    php8-zip \
-    php8-zlib
+    php \
+    php-ctype \
+    php-curl \
+    php-dom \
+    php-gd \
+    php-iconv \
+    php-mbstring \
+    php-mongodb \
+    php-mysqli \
+    php-openssl \
+    php-pdo \
+    php-pdo_mysql \
+    php-phar \
+    php-posix \
+    php-session \
+    php-sodium \
+    php-xml \
+    php-zip \
+    php-zlib
 
 RUN ln -sf /usr/bin/php8 /usr/bin/php
 
